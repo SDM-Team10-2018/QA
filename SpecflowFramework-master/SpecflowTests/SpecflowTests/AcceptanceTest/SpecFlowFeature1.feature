@@ -4,10 +4,19 @@
 	I want to be able to select and submit my happiness level details
 
 @mytag
-Scenario: Submit Individual Hapiness Level
+Scenario Outline: Submit Individual Hapiness Level
 	Given I have entered my individual happiness level
-	When I press on the submit button
+	When I press on the submit button <Emotion>
 	Then the hapiness level information should be submitted 
+
+	Examples: 
+	| Emotion   |
+	| VeryHappy |
+	| Scared    |
+	| Angry     |
+	| VeryBad   |
+	| Sad       |
+	| Crying    |
 
 Scenario: Cancel Happiness Level Selection
 	Given I have entered my individual happiness level

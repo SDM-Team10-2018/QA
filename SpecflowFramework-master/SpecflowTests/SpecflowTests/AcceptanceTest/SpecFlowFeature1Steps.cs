@@ -22,9 +22,8 @@ namespace SpecflowTests
 
             Thread.Sleep(1000);
         }
-
-        [When(@"I press on the submit button")]
-        public void WhenIPressOnTheSubmitButton()
+        [When(@"I press on the submit button (.*)")]
+        public void WhenIPressOnTheSubmitButtonVeryHappy(string p0)
         {
             //Click on Submit button
 
@@ -32,9 +31,10 @@ namespace SpecflowTests
             //Driver.driver.FindElement(By.XPath("//*[@id='icon-submitt']")).Click();
 
             //Checking with the clicking of an image
-            Driver.driver.FindElement(By.XPath("//img[@src='images/Angry.jpg']")).Click();
+            Driver.driver.FindElement(By.XPath("//img[@src='images/" + p0 + ".jpg']")).Click();
         }
 
+        
         [Then(@"the hapiness level information should be submitted")]
         public void ThenTheHapinessLevelInformationShouldBeSubmitted()
         {
@@ -92,6 +92,18 @@ namespace SpecflowTests
 
 
 
+
+        [When(@"I press on the submit button")]
+        public void WhenIPressOnTheSubmitButton()
+        {
+            //Click on Submit button
+
+            //Commenting out submit functionality until further development
+            //Driver.driver.FindElement(By.XPath("//*[@id='icon-submitt']")).Click();
+
+            //Checking with the clicking of an image
+            Driver.driver.FindElement(By.XPath("//img[@src='images/Angry.jpg']")).Click();
+        }
 
     }
 }

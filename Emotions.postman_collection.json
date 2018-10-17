@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "a836044c-9716-4a0c-9a83-4a82293d8dd0",
+		"name": "Emotions",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EmotionGet",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:5000/api/emotions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"emotions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Emotion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"teamName\" : \"Team10\",\n\t\"individualEmotion\" : \"Happy\",\n\t\"teamEmotion\" : \"VeryHappy\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/emotions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"emotions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

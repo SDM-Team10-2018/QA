@@ -48,3 +48,17 @@ C:\Users\sachi\Desktop\Team 10\Tests\SpecflowFramework-master\SpecflowTests\Spec
 C:\Users\sachi\Desktop\Team 10\Tests\SpecflowFramework-master\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.csproj.CopyComplete
 C:\Users\sachi\Desktop\Team 10\Tests\SpecflowFramework-master\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.dll
 C:\Users\sachi\Desktop\Team 10\Tests\SpecflowFramework-master\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.pdb
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\bin\Debug\chromedriver.exe
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\bin\Debug\SpecflowPages.dll
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\bin\Debug\SpecflowPages.pdb
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\bin\Debug\RelevantCodes.ExtentReports.dll
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\bin\Debug\WebDriver.dll
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\bin\Debug\WebDriver.Support.dll
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\bin\Debug\WebDriver.xml
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\bin\Debug\WebDriver.Support.xml
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.csprojResolveAssemblyReference.cache
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.csproj.CoreCompileInputs.cache
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.csproj.CopyComplete
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.dll
+C:\Users\sachi\Desktop\FinalQA\QA\SpecflowFramework-master\SpecflowTests\SpecflowPages\obj\Debug\SpecflowPages.pdb

@@ -44,8 +44,8 @@ namespace SpecflowTests.AcceptanceTest
         public static void FeatureSetup(Microsoft.VisualStudio.TestTools.UnitTesting.TestContext testContext)
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner(null, 0);
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Indicate Happiness", "\tIn order inform my individual happiness level\r\n\tAs a team member\r\n\tI want to be " +
-                    "able to select and submit my happiness level details", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Indicate Happiness", "\tIn order inform individual and team happiness levels\r\n\tAs a team member\r\n\tI want" +
+                    " to be able to select and submit my happiness level details", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -83,7 +83,7 @@ namespace SpecflowTests.AcceptanceTest
             testRunner.CollectScenarioErrors();
         }
         
-        public virtual void SubmitIndividualHapinessLevel(string emotion, string[] exampleTags)
+        public virtual void SubmitHapinessInformation(string emotion, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "mytag"};
@@ -91,13 +91,13 @@ namespace SpecflowTests.AcceptanceTest
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Submit Individual Hapiness Level", @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Submit Hapiness Information", @__tags);
 #line 7
 this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.Given("I have entered my individual happiness level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given(string.Format("I have entered happiness levels {0}", emotion), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.When(string.Format("I press on the submit button {0}", emotion), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("I press on the submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
  testRunner.Then("the hapiness level information should be submitted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -105,117 +105,68 @@ this.ScenarioSetup(scenarioInfo);
         }
         
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Individual Hapiness Level: VeryHappy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Hapiness Information: NotAtAllHappy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "NotAtAllHappy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "NotAtAllHappy")]
+        public virtual void SubmitHapinessInformation_NotAtAllHappy()
+        {
+#line 7
+this.SubmitHapinessInformation("NotAtAllHappy", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Hapiness Information: NotSoHappy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "NotSoHappy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "NotSoHappy")]
+        public virtual void SubmitHapinessInformation_NotSoHappy()
+        {
+#line 7
+this.SubmitHapinessInformation("NotSoHappy", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Hapiness Information: Neutral")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Neutral")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "Neutral")]
+        public virtual void SubmitHapinessInformation_Neutral()
+        {
+#line 7
+this.SubmitHapinessInformation("Neutral", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Hapiness Information: Happy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Happy")]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "Happy")]
+        public virtual void SubmitHapinessInformation_Happy()
+        {
+#line 7
+this.SubmitHapinessInformation("Happy", ((string[])(null)));
+#line hidden
+        }
+        
+        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
+        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Hapiness Information: VeryHappy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "VeryHappy")]
         [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "VeryHappy")]
-        public virtual void SubmitIndividualHapinessLevel_VeryHappy()
+        public virtual void SubmitHapinessInformation_VeryHappy()
         {
 #line 7
-this.SubmitIndividualHapinessLevel("VeryHappy", ((string[])(null)));
+this.SubmitHapinessInformation("VeryHappy", ((string[])(null)));
 #line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Individual Hapiness Level: Scared")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Scared")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "Scared")]
-        public virtual void SubmitIndividualHapinessLevel_Scared()
-        {
-#line 7
-this.SubmitIndividualHapinessLevel("Scared", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Individual Hapiness Level: Angry")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Angry")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "Angry")]
-        public virtual void SubmitIndividualHapinessLevel_Angry()
-        {
-#line 7
-this.SubmitIndividualHapinessLevel("Angry", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Individual Hapiness Level: VeryBad")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "VeryBad")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "VeryBad")]
-        public virtual void SubmitIndividualHapinessLevel_VeryBad()
-        {
-#line 7
-this.SubmitIndividualHapinessLevel("VeryBad", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Individual Hapiness Level: Sad")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Sad")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "Sad")]
-        public virtual void SubmitIndividualHapinessLevel_Sad()
-        {
-#line 7
-this.SubmitIndividualHapinessLevel("Sad", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Submit Individual Hapiness Level: Crying")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestCategoryAttribute("mytag")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("VariantName", "Crying")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("Parameter:Emotion", "Crying")]
-        public virtual void SubmitIndividualHapinessLevel_Crying()
-        {
-#line 7
-this.SubmitIndividualHapinessLevel("Crying", ((string[])(null)));
-#line hidden
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Cancel Happiness Level Selection")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
-        public virtual void CancelHappinessLevelSelection()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Cancel Happiness Level Selection", ((string[])(null)));
-#line 21
-this.ScenarioSetup(scenarioInfo);
-#line 22
- testRunner.Given("I have entered my individual happiness level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 23
- testRunner.When("I press on the Cancel button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 24
- testRunner.Then("the happiness level selection should not be submitted and saved", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute()]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.DescriptionAttribute("Change Selection before Submitting")]
-        [Microsoft.VisualStudio.TestTools.UnitTesting.TestPropertyAttribute("FeatureTitle", "Indicate Happiness")]
-        public virtual void ChangeSelectionBeforeSubmitting()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change Selection before Submitting", ((string[])(null)));
-#line 26
-this.ScenarioSetup(scenarioInfo);
-#line 27
- testRunner.Given("I have entered my individual happiness level", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 28
- testRunner.When("I change the initial selection", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 29
- testRunner.Then("the new selection is activated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
         }
     }
 }

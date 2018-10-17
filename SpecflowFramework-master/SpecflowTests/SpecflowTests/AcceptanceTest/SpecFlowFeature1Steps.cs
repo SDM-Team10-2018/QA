@@ -12,29 +12,23 @@ namespace SpecflowTests
     [Binding]
     public class SpecFlowFeature1Steps : Start
     {
-        [Given(@"I have entered my individual happiness level")]
-        public void GivenIHaveEnteredMyIndividualHappinessLevel()
+        [Given(@"I have entered happiness levels (.*)")]
+        public void GivenIHaveEnteredHappinessLevels(string p0)
         {
-            // Click on the Emotion
-
-            // Commenting out the selection of emotion until further development
-            //Driver.driver.FindElement(By.XPath("//img[@src='images/Angry.jpg']")).Click();
-
+            // Click on the desired Individual Emotion
+            Driver.driver.FindElement(By.XPath("//img[@id='Ind" + p0 + "']")).Click();
+            // Cick on the desired Team Emotion
+            Driver.driver.FindElement(By.XPath("//img[@id='Team" + p0 + "']")).Click();
             Thread.Sleep(1000);
         }
-        [When(@"I press on the submit button (.*)")]
-        public void WhenIPressOnTheSubmitButtonVeryHappy(string p0)
+
+        [When(@"I press on the submit button")]
+        public void WhenIPressOnTheSubmitButtonVeryHappy()
         {
             //Click on Submit button
-
-            //Commenting out submit functionality until further development
-            //Driver.driver.FindElement(By.XPath("//*[@id='icon-submitt']")).Click();
-
-            //Checking with the clicking of an image
-            Driver.driver.FindElement(By.XPath("//img[@src='images/" + p0 + ".jpg']")).Click();
+            Driver.driver.FindElement(By.XPath("//button[@id='Submit']")).Click();
         }
 
-        
         [Then(@"the hapiness level information should be submitted")]
         public void ThenTheHapinessLevelInformationShouldBeSubmitted()
         {
@@ -42,12 +36,13 @@ namespace SpecflowTests
             Thread.Sleep(1000);
             CommonMethods.test = CommonMethods.extent.StartTest("Submit Happiness Level");
 
-            //wait
+            // Setting up the expected result and the actual result
             Thread.Sleep(1000);
-            string ActualResult = "Your individual feeling has been successfully logged!";
-            string ExpectedResult = Driver.driver.FindElement(By.XPath("//h3[contains(.,'Your individual feeling has been successfully logged!')]")).Text;
+            string ActualResult = "Thanks for your help! Your happiness information has been saved. We will remind you for the next notification.";
+            string ExpectedResult = Driver.driver.FindElement(By.XPath("//h5[@id='submitted']")).Text;
             Thread.Sleep(500);
-            //Check if the confirmation is displayed             
+
+            //Check if the expected confirmation is displayed             
             if (ActualResult == ExpectedResult)
             {
                 Thread.Sleep(1000);
@@ -56,53 +51,10 @@ namespace SpecflowTests
             }
             else
             {
-
+                // Display error on failure
                 Console.WriteLine("Test Failed");
                 CommonMethods.test.Log(LogStatus.Fail, "Test Failed");
             }
-        }
-
-
-
-        [When(@"I press on the Cancel button")]
-        public void WhenIPressOnTheCancelButton()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"the happiness level selection should not be submitted and saved")]
-        public void ThenTheHappinessLevelSelectionShouldNotBeSubmittedAndSaved()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-
-
-        [When(@"I change the initial selection")]
-        public void WhenIChangeTheInitialSelection()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-        [Then(@"the new selection is activated")]
-        public void ThenTheNewSelectionIsActivated()
-        {
-            ScenarioContext.Current.Pending();
-        }
-
-
-
-
-        [When(@"I press on the submit button")]
-        public void WhenIPressOnTheSubmitButton()
-        {
-            //Click on Submit button
-
-            //Commenting out submit functionality until further development
-            //Driver.driver.FindElement(By.XPath("//*[@id='icon-submitt']")).Click();
-
-            //Checking with the clicking of an image
-            Driver.driver.FindElement(By.XPath("//img[@src='images/Angry.jpg']")).Click();
         }
 
     }
